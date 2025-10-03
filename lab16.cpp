@@ -10,6 +10,7 @@ private:
     int blue;
 public:
     Color() : red(0), green(0), blue(0) {}
+    Color(int r, int g, int b) : red(r), green(g), blue(b) {}
     void setRed(int r) { red = r; }
     void setGreen(int g) { green = g; }
     void setBlue(int b) { blue = b; }
@@ -25,11 +26,19 @@ public:
 };
 
 int main() {
-    Color c1;
-    c1.setRed(255);
-    c1.setGreen(0);
-    c1.setBlue(0);
+    Color cDefault;
+    cDefault.setRed(100);
+    cDefault.setGreen(150);
+    cDefault.setBlue(200);
+    Color cRed(255, 0, 0);
+    Color cGreen(0, 255, 0);
+    Color cBlue(0, 0, 255);
+    Color cGray(128, 128, 128);
     cout << "===== Color Objects =====\n";
-    c1.print("red");
+    cDefault.print("custom");
+    cRed.print("red");
+    cGreen.print("green");
+    cBlue.print("blue");
+    cGray.print("gray");
     return 0;
 }
