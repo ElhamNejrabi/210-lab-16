@@ -11,6 +11,8 @@ private:
 public:
     Color() : red(0), green(0), blue(0) {}
     Color(int r, int g, int b) : red(r), green(g), blue(b) {}
+    Color(int r, int g) : red(r), green(g), blue(0) {}
+    explicit Color(int gray) : red(gray), green(gray), blue(gray) {}
     void setRed(int r) { red = r; }
     void setGreen(int g) { green = g; }
     void setBlue(int b) { blue = b; }
@@ -27,18 +29,16 @@ public:
 
 int main() {
     Color cDefault;
-    cDefault.setRed(100);
-    cDefault.setGreen(150);
-    cDefault.setBlue(200);
+    cDefault.setRed(80);
+    cDefault.setGreen(160);
+    cDefault.setBlue(240);
     Color cRed(255, 0, 0);
-    Color cGreen(0, 255, 0);
-    Color cBlue(0, 0, 255);
-    Color cGray(128, 128, 128);
+    Color cYellow(255, 255);
+    Color cGray(128);
     cout << "===== Color Objects =====\n";
     cDefault.print("custom");
     cRed.print("red");
-    cGreen.print("green");
-    cBlue.print("blue");
+    cYellow.print("yellow");
     cGray.print("gray");
     return 0;
 }
